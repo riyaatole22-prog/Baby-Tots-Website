@@ -1,0 +1,534 @@
+<!-- FULL CLONE OF THE EXACT UI FROM YOUR SCREENSHOTS -->
+<!-- Hero with blurred photo, bold chubby heading, rounded buttons, pastel background -->
+<!-- About cards, Visit Us section, Contact + Enquiry grid, exact spacing & shadows -->
+<!-- Replace EMAIL before deploying -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baby Tots Daycare</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --pink: #e65b84;
+        --light-pink: #fbd1df;
+        --cream: #fff7ef;
+        --soft-white: #fffbf8;
+        --deep-pink: #9b2c47;
+        --blue: #245d78;
+        --yellow: #f7e7a6;
+        --shadow: 0 4px 20px rgba(0,0,0,0.12);
+        --card-radius: 22px;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        background: var(--soft-white);
+        color: #333;
+    }
+
+    /* Hero section*/
+    .hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+
+    background: url('bg.jpg') center/cover no-repeat;
+    filter: brightness(0.98);
+    overflow: hidden;
+}
+
+/* Soft dreamy blur + pastel overlay */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    backdrop-filter: blur(2px);
+    background: rgba(255, 245, 235, 0.35);
+    z-index: 0;
+}
+
+/* Optional smooth bottom fade */
+.hero::before {
+    content:"";
+    position:absolute;
+    bottom:0; left:0;
+    width:100%;
+    height:180px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.95) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+/* Floating animation for emoji/teddy */
+.floating {
+    animation: float 3.5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.hero h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 4rem;
+    margin: 0;
+    color: #7c1133;
+    font-weight: 700;
+}
+
+.hero p.subtitle {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    color: #5c2a44;
+}
+
+.hero-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.btn-primary {
+    background: #f5a4c0;
+    color: #7a002b;
+}
+
+.btn-outline {
+    background: white;
+    border: 2px solid #f5a4c0;
+    color: #a2003e;
+}
+
+
+    /* ABOUT SECTION */
+    .section-title {
+        text-align: center;
+        margin-top: 80px;
+        font-size: 2.5rem;
+        font-family: 'Fredoka';
+        color: #7c1133;
+    }
+
+    .about-container {
+        margin: 40px auto;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .about-card {
+        background: white;
+        padding: 30px;
+        border-radius: var(--card-radius);
+        flex: 1;
+        text-align: center;
+        box-shadow: var(--shadow);
+    }
+
+    .about-card h3 {
+        font-family: 'Fredoka';
+        color: #7c1133;
+    }
+
+    /* VISIT US SECTION */
+    .visit-box {
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 30px 40px;
+        background: white;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow);
+    }
+
+    .visit-box h2 {
+        font-family: 'Fredoka';
+        color: #7c1133;
+    }
+
+    .visit-box p {
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+
+    /* CONTACT + ENQUIRY GRID */
+    .contact-grid {
+        max-width: 1200px;
+        margin: 80px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .contact-card {
+        background: white;
+        padding: 30px;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow);
+    }
+
+    .contact-card h3 {
+        font-family: 'Fredoka';
+        color: #7c1133;
+        margin-bottom: 15px;
+    }
+
+    .contact-card p {
+        margin: 8px 0;
+    }
+
+    .form-card input, .form-card textarea {
+        width: 100%;
+        padding: 14px;
+        margin: 10px 0;
+        border-radius: 12px;
+        border: 2px solid #f7d5e3;
+        background: #fff9f9;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 14px;
+        background: #f5a4c0;
+        color: #7c0030;
+        border: none;
+        border-radius: 14px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-top: 10px;
+        cursor: pointer;
+        box-shadow: var(--shadow);
+    }
+    /* 📱 MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+
+    /* HERO */
+    .hero {
+        height: 70vh;
+        padding: 10px;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+        line-height: 2.7rem;
+    }
+
+    .hero p.subtitle {
+        font-size: 1.1rem;
+        padding: 0 10px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn {
+        width: 85%;
+        margin: auto;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+
+    /* ABOUT SECTION */
+    .about-container {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+
+    /* GALLERY SECTION → 1 column */
+    .gallery-grid,
+    div[style*="grid-template-columns:repeat(3"] {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    div[style*="height:260px"] img {
+        height: 200px !important;
+    }
+
+
+    /* VISIT US SECTION */
+    .visit-box {
+        grid-template-columns: 1fr !important;
+        padding: 20px;
+        gap: 20px;
+    }
+
+
+    /* CONTACT GRID */
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        margin-top: 40px;
+        gap: 20px;
+    }
+
+    .contact-card {
+        padding: 20px;
+    }
+
+    /* Instagram finger fix */
+    .contact-card a span {
+        right: -18px !important;
+        top: 0 !important;
+    }
+
+}
+.gallery-grid {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+}
+
+
+</style>
+</head>
+<body>
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <div class="hero-content">
+
+        <div class="floating" style="font-size:60px; margin-bottom:15px;">
+            😊
+        </div>
+
+        <h1>Welcome to Baby Tots</h1>
+
+        <p class="subtitle">
+            Where Little Dreams Grow Big! <br>
+            Your Child, Our Responsibility
+        </p>
+
+        <div class="hero-buttons">
+            <button class="btn btn-primary">Enquire Now 🌸</button>
+            <button class="btn btn-outline">View Gallery 📸</button>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ABOUT TITLE -->
+<h2 class="section-title" id="about">About Baby Tots 🌈</h2>
+<p style="text-align:center; max-width:700px; margin:10px auto; font-size:1.1rem;">A nurturing haven where your little ones learn, play, and grow in a safe environment.</p>
+
+<!-- ABOUT CARDS -->
+<div class="about-container">
+    <div class="about-card">
+        <h3>❤️ Loving Care</h3>
+        <p>Every child receives individual attention with warmth and compassion.</p>
+    </div>
+
+    <div class="about-card">
+        <h3>🛡️ Safe Environment</h3>
+        <p>Your child's safety is our top priority with secure facilities and trained caregivers.</p>
+    </div>
+
+    <div class="about-card">
+        <h3>✨ Fun Learning</h3>
+        <p>Engaging activities that support developmental milestones.</p>
+    </div>
+</div>
+
+<!-- GALLERY SECTION -->
+<h2 class="section-title">Gallery 📸</h2>
+<p style="text-align:center; max-width:700px; margin:10px auto; font-size:1.1rem;">A glimpse into our playful world!</p>
+
+<div class="gallery-grid">
+
+    <img src="dc1.jpeg" 
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px; box-shadow:var(--shadow);">
+
+    <img src="dc4.jpeg" 
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px; box-shadow:var(--shadow);">
+
+    <img src="dc7.jpeg" 
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px; box-shadow:var(--shadow);">
+
+    <img src="dc9.jpeg" 
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px; box-shadow:var(--shadow);">
+
+    <img src="dc10.jpeg" 
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px; box-shadow:var(--shadow);">
+
+    <img src="dc11.jpeg" 
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px; box-shadow:var(--shadow);">
+
+    <img src="dc14.jpeg" 
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px; box-shadow:var(--shadow);">
+
+    <img src="dc19.jpeg" 
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px; box-shadow:var(--shadow);">
+
+    <img src="dc18.jpeg" 
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px; box-shadow:var(--shadow);">
+</div>
+
+<!-- VISIT US SECTION -->
+<div class="visit-box" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;">
+
+    <div>
+        <h2>📌 Visit Us</h2>
+        <p>Purandare Colony, Yashada B 102, Syndicate, Murbad Road, Kalyan West – 421301</p>
+        <p style="color:#2e7d32; font-weight:600;">Open Monday – Friday, 7:00 AM – 6:00 PM</p>
+    </div>
+
+    <div>
+        <h2>Your Child, Our Responsibility</h2>
+        <p style="font-size:1.05rem; line-height:1.6;">
+            We are committed to providing a nurturing, stimulating, and secure environment where 
+            your little one can thrive. Our caregivers treat each child with love, fostering growth, 
+            curiosity, and happiness every single day.
+        </p>
+    </div>
+
+</div>
+
+
+<!-- CONTACT + ENQUIRY -->
+<h2 class="section-title">Get in Touch 💗</h2>
+<p style="text-align:center; margin-top:-10px;">We’d love to hear from you!</p>
+
+<div class="contact-grid" id="enquiry">
+    <!-- CONTACT CARDS -->
+    <div>
+        <div class="contact-card">
+            <h3>📞 Call Us</h3>
+            <p><strong>+91 9021633489</strong></p>
+            <p>Tap to call directly.</p>
+        </div>
+
+        <div class="contact-card" style="margin-top:20px;">
+            <h3>📸 Follow Us</h3>
+          <p>
+  <a href="https://instagram.com/babytots012"
+     target="_blank"
+     style="text-decoration:none; color:#245d78; font-weight:600; position:relative; display:inline-block;">
+     
+     @babytots012
+
+     <!-- Animated pointing finger -->
+     <span style="
+        position:absolute;
+        right:-25px;
+        top:2px;
+        animation: wiggle 0.9s infinite ease-in-out;
+        font-size:18px;
+     ">👈</span>
+  </a>
+</p>
+
+<!-- Finger animation -->
+<style>
+@keyframes wiggle {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+  100% { transform: translateX(0); }
+}
+</style>
+
+            <p>See our daily adventures on Instagram!</p>
+        </div>
+
+        <div class="contact-card" style="margin-top:20px;">
+            <h3>⏰ Opening Hours</h3>
+            <p>Monday – Saturday: 8:00 AM – 8:00 PM</p>
+            <p>Sunday: Closed</p>
+        </div>
+    </div>
+
+    <!-- ENQUIRY FORM -->
+     <div class="contact-card form-card">
+    <h3>Enquiry Form ✨</h3>
+
+    <form id="enquiryForm" onsubmit="return false;">
+
+        <input type="text" id="name" placeholder="Your name" required>
+        <input type="text" id="address" placeholder="Your address" required>
+        <input type="text" id="phone" placeholder="Your phone number" required>
+        <textarea id="message" rows="4" placeholder="Message"></textarea>
+
+        <!-- WhatsApp Enquiry Button -->
+        <button type="button" onclick="sendToWhatsApp()" style="
+            width:100%;
+            padding:14px;
+            background:#25D366;
+            color:white;
+            border:none;
+            border-radius:14px;
+            font-size:1.1rem;
+            font-weight:600;
+            margin-top:15px;
+            cursor:pointer;
+            box-shadow:0 4px 20px rgba(0,0,0,0.15);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:8px;
+        ">
+            💬 Send Enquiry on WhatsApp
+        </button>
+
+    </form>
+</div>
+
+<script>
+function sendToWhatsApp() {
+    let name = document.getElementById("name").value;
+    let address = document.getElementById("address").value;
+    let phone = document.getElementById("phone").value;
+    let message = document.getElementById("message").value;
+
+    let whatsappMessage = `New Enquiry for Baby Tots:%0A%0A`
+        + ` Name: ${name}%0A`
+        + ` Address: ${address}%0A`
+        + ` Phone: ${phone}%0A`
+        + ` Message: ${message}`;
+
+    let whatsappURL = `https://wa.me/919021633489?text=${whatsappMessage}`;
+
+    window.open(whatsappURL, "_blank");
+}
+</script>
+
+
+
+</body>
+</html>
