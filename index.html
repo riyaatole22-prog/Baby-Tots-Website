@@ -336,10 +336,14 @@
             Your Child, Our Responsibility
         </p>
 
-        <div class="hero-buttons">
-            <button class="btn btn-primary">Enquire Now 🌸</button>
-            <button class="btn btn-outline">View Gallery 📸</button>
-        </div>
+        <button id="enquireBtn" class="btn enquire-btn">
+    Enquire Now 🌸
+</button>
+
+<button id="galleryBtn" class="btn gallery-btn">
+    View Gallery 📷
+</button>
+
 
     </div>
 </div>
@@ -366,7 +370,7 @@
         <p>Engaging activities that support developmental milestones.</p>
     </div>
 </div>
-
+<section id="gallery">
 <!-- GALLERY SECTION -->
 <h2 class="section-title">Gallery 📸</h2>
 <p style="text-align:center; max-width:700px; margin:10px auto; font-size:1.1rem;">A glimpse into our playful world!</p>
@@ -399,7 +403,7 @@
 
     <img src="dc18.jpeg" 
          style="width:100%; height:260px; object-fit:cover; border-radius:20px; box-shadow:var(--shadow);">
-</div>
+</div></section>
 
 <!-- VISIT US SECTION -->
 <div class="visit-box" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;">
@@ -423,7 +427,7 @@
 
 </div>
 
-
+<section id="enquiry">
 <!-- CONTACT + ENQUIRY -->
 <h2 class="section-title">Get in Touch 💗</h2>
 <p style="text-align:center; margin-top:-10px;">We’d love to hear from you!</p>
@@ -509,7 +513,7 @@
         </button>
 
     </form>
-</div>
+</div></section>
 <!-- FOOTER -->
 <footer style="
     background:#ffeef6;
@@ -542,6 +546,16 @@ function sendToWhatsApp() {
 
     window.open(whatsappURL, "_blank");
 }
+
+    document.getElementById("enquireBtn").onclick = function () {
+        document.getElementById("enquiry").scrollIntoView({ behavior: "smooth" });
+    };
+
+    document.getElementById("galleryBtn").onclick = function () {
+        document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
+    };
+
+
 </script>
 
 
