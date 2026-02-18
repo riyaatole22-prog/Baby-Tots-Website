@@ -79,12 +79,12 @@ function App() {
         <h2>Our Happy Moments</h2>
 
         <div className="gallery-grid">
-          <div className="gallery-card"><img src="dc10.jpeg" alt="" /></div>
-          <div className="gallery-card"><img src="dc11.jpeg" alt="" /></div>
-          <div className="gallery-card"><img src="dc12.jpeg" alt="" /></div>
-          <div className="gallery-card"><img src="dc13.jpeg" alt="" /></div>
-          <div className="gallery-card"><img src="dc18.jpeg" alt="" /></div>
-          <div className="gallery-card"><img src="dc19.jpeg" alt="" /></div>
+          <div className="gallery-card"><img src="/dc10.jpeg" alt="" /></div>
+          <div className="gallery-card"><img src="/dc11.jpeg" alt="" /></div>
+          <div className="gallery-card"><img src="/dc12.jpeg" alt="" /></div>
+          <div className="gallery-card"><img src="/dc13.jpeg" alt="" /></div>
+          <div className="gallery-card"><img src="/dc18.jpeg" alt="" /></div>
+          <div className="gallery-card"><img src="/dc19.jpeg" alt="" /></div>
         </div>
       </section>
 
